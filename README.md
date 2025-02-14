@@ -10,8 +10,22 @@ To build the project, run the following command:
 cargo build
 ```
 
+## Running the Project
+To run the Rust application, use the following command:
+```bash
+cargo run
+```
+
+To keep your local repository updated, use:
+```bash
+git pull
+```
+
 ## Usage
 After building the project, you can run the application to explore Tokyo and ask questions about the city.
+
+## Feedback
+We value your feedback! Feel free to reach out on: [LinkedIn](https://www.linkedin.com/in/bniladridas) to share your thoughts or suggestions about the project.
 
 ## Dependencies
 This project uses the following dependencies:
@@ -103,6 +117,11 @@ Here are some important Git commands used in this project:
 11. **Check Status of Repository:**
     ```bash
     git status
+    ```
+
+12. **Pull Repository:**
+    ```bash
+    git pull
     ```
 
 ## Mathematical Concepts

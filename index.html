@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo Explorer Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ffcc00;
+            --text-color: #ffffff;
+            --bg-overlay: rgba(0, 0, 0, 0.8);
+            --accent-color: #ff4b4b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url('https://source.unsplash.com/1920x1080/?tokyo,night') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+            background: var(--bg-overlay);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+        }
+
+        /* Header Styles */
+        .site-header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--primary-color);
+            animation: fadeInDown 1s ease;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            padding: 10px;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+
+        .site-header h1 {
+            font-size: 3.5em;
+            margin: 1rem 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin: 3rem 0;
+            animation: fadeInUp 1s ease;
+        }
+
+        .blog-post {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-post h2 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .timeline ul {
+            list-style: none;
+        }
+
+        .timeline li {
+            margin: 2rem 0;
+            padding-left: 2rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .timeline li:hover::before {
+            background: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 2px solid var(--primary-color);
+            animation: fadeInUp 1s ease;
+        }
+
+        .site-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .site-footer a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(255, 204, 0, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .site-header h1 {
+                font-size: 2.5em;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .blog-post {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <img src="https://www.rust-lang.org/logos/rust-logo-512x512.png" alt="Rust Logo" class="logo">
+            <h1>Tokyo Explorer + AI</h1>
+            <p>Your guide to exploring Tokyo with AI!</p>
+            <p>This project is a terminal-based AI application that guides users in exploring Tokyo using advanced AI capabilities.</p>
+        </header>
+
+        <main class="main-content">
+            <section class="blog-post">
+                <h2>Enhancements and Features</h2>
+                <p>In our latest updates, we have integrated the Gemini-2.0-pro-exp-02-05 model to enhance the user experience...</p>
+                
+                <div class="timeline">
+                    <h3>Timeline of Development</h3>
+                    <ul>
+                        <li>2023: Project inception and initial feature development.</li>
+                        <li>2024: Integration of AI capabilities and prompt engineering.</li>
+                        <li>2025: Current enhancements and user feedback implementation.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Tokyo Explorer Project</p>
+            <p>View the project repository on <a href="https://github.com/bniladridas/tokyo_explorer" target="_blank">GitHub <i class="fab fa-github"></i></a></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add timeline animation on scroll
+            const timelineItems = document.querySelectorAll('.timeline li');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            });
+
+            timelineItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateX(-20px)';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
