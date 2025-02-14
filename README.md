@@ -23,6 +23,88 @@ This project uses the following dependencies:
 - serde
 - serde_json
 
+## Security Notice
+Please ensure that your `.env` file, which may contain sensitive information such as API keys, is kept secure and not shared publicly. Do not include the `.env` file in your version control system.
+
+## Enhancements to Gemini API Interaction
+
+### Prompt Engineering
+To improve the quality of responses from the Gemini API, we enhanced the prompts sent to the API by providing more context. This helps guide the model towards generating more relevant and engaging responses. For example, prompts are now formatted as follows:
+
+```rust
+let enhanced_prompt = format!("As an exotic guide to Tokyo, can you provide insights on: {}", prompt);
+```
+
+### API Parameter Adjustments
+We also adjusted several parameters in the API request to influence the creativity and length of the responses:
+- **Temperature:** Set to `0.7` to allow for more creative responses.
+- **Top K:** Adjusted to `50` to limit the number of candidate responses.
+- **Max Output Tokens:** Reduced to `150` to ensure concise responses.
+
+These changes aim to enhance the overall user experience by providing richer and more informative interactions with the AI.
+
+## Model Used
+This project utilizes the **Gemini-2.0-pro-exp-02-05** model from the Gemini API for generating AI responses. The model is designed to provide informative and engaging interactions about Tokyo, leveraging advanced natural language processing capabilities.
+
+## Crucial Git Commands
+
+Here are some important Git commands used in this project:
+
+1. **Initialize a Git Repository:**
+   ```bash
+   git init
+   ```
+
+2. **Add Files to Staging:**
+   ```bash
+   git add .
+   ```
+
+3. **Commit Changes:**
+   ```bash
+   git commit -m "Your commit message"
+   ```
+
+4. **Push Changes to Remote Repository:**
+   ```bash
+   git push -u origin branch-name
+   ```
+
+5. **Fetch Updates from Remote:**
+   ```bash
+   git fetch origin
+   ```
+
+6. **Switch to a Branch:**
+   ```bash
+   git checkout branch-name
+   ```
+
+7. **Create and Switch to a New Branch:**
+   ```bash
+   git checkout -b new-branch-name
+   ```
+
+8. **Clone a Repository:**
+   ```bash
+   git clone https://github.com/username/repo-name
+   ```
+
+9. **Force Push Changes:**
+   ```bash
+   git push --force
+   ```
+
+10. **Amend Last Commit:**
+    ```bash
+    git commit --amend -m "Updated commit message"
+    ```
+
+11. **Check Status of Repository:**
+    ```bash
+    git status
+    ```
+
 ## Mathematical Concepts
 
 ### Probability Distributions

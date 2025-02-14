@@ -74,19 +74,22 @@ async fn query_gemini(
     prompt: &str,
 ) -> Result<String, Box<dyn std::error::Error>> {
     let client = reqwest::Client::new();
-    
+
+    // Enhance the prompt with context
+    let enhanced_prompt = format!("As an exotic guide to Tokyo, can you provide insights on: {}", prompt);
+
     let request = GeminiRequest {
         contents: vec![Content {
             role: "user".to_string(),
             parts: vec![Part {
-                text: prompt.to_string(),
+                text: enhanced_prompt,
             }],
         }],
         generation_config: GenerationConfig {
-            temperature: 1.0,
-            top_k: 64,
+            temperature: 0.7,  // Adjust for creativity
+            top_k: 50,
             top_p: 0.95,
-            max_output_tokens: 8192,
+            max_output_tokens: 150,  // Adjust based on expected response length
             response_mime_type: "text/plain".to_string(),
         },
     };
@@ -158,7 +161,7 @@ async fn ai_tokyo_guide(config: &AppConfig) -> Result<(), Box<dyn std::error::Er
     );
     
     let response = query_gemini(config, &prompt).await?;
-    println!("\n{}", response.bright_green());
+    display_ai_response_ascii_box(&response, &query);
     Ok(())
 }
 
@@ -176,7 +179,7 @@ async fn ai_travel_planner(config: &AppConfig) -> Result<(), Box<dyn std::error:
     );
     
     let response = query_gemini(config, &prompt).await?;
-    println!("\n{}", response.bright_green());
+    display_ai_response_ascii_box(&response, &interests);
     Ok(())
 }
 
@@ -236,4 +239,20 @@ fn get_user_input() -> io::Result<String> {
     let mut input = String::new();
     io::stdin().read_line(&mut input)?;
     Ok(input.trim().to_string())
+}
+
+fn generate_ascii_art(input: &str) {
+    for c in input.chars() {
+        println!("{}", c); // Simple representation, can be enhanced
+    }
+}
+
+fn display_ai_response_ascii_box(response: &str, user_input: &str) {
+    generate_ascii_art(user_input); // Generate ASCII art from user input
+    let box_width = response.len() + 4; // Adding padding for the box
+    println!("{}",
+             "+".repeat(box_width));
+    println!("| {} |", response); // Centered response
+    println!("{}",
+             "+".repeat(box_width));
 }
