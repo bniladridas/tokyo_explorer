@@ -22,7 +22,7 @@ git pull
 ```
 
 ## Usage
-After building the project, you can run the application to explore Tokyo and ask questions about the city.
+After building the project, you can run the application to explore various aspects of Tokyo, including AI-generated itineraries, cultural insights, and more.
 
 ## Feedback
 We value your feedback! Feel free to reach out on: [LinkedIn](https://www.linkedin.com/in/bniladridas) to share your thoughts or suggestions about the project.
@@ -172,6 +172,14 @@ graph TD;
     C --> D[Probability of the chain being in state x at time t];
 ```
 
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.10/mermaid.min.js">
-</script>
+### Mathematical Formulation
+
+```mermaid
+graph TD;
+A[Mathematical Formulation] --> B[Probability distribution];
+B --> C[Probability of a token x];
+C --> D[Score of token x];
+D --> E[Temperature T];
+E --> F[Probability distribution];
+F --> G[Generated token x];
+```
