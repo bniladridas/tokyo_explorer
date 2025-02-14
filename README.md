@@ -183,3 +183,15 @@ D --> E[Temperature T];
 E --> F[Probability distribution];
 F --> G[Generated token x];
 ```
+
+## Generating a Release
+
+To generate a release using GitHub Actions, follow these steps:
+
+1. Ensure that your code is up to date and all changes are committed.
+2. Push your changes to the remote repository.
+3. Navigate to the "Actions" tab on your GitHub repository.
+4. Select the "Generate Release" workflow.
+5. Click on the "Run workflow" button and follow the prompts.
+
+The `release.yml` workflow file in the `.github/workflows` directory handles the release generation process, including building the project, creating a release, and uploading the release artifacts.
