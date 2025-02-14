@@ -1,0 +1,44 @@
+Niladris-MacBook-Air:tokyo_explorer niladridas$ cargo run
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.21s
+     Running `target/debug/tokyo_explorer`
+Welcome to Tokyo Explorer + AI!
+体験を楽しんでください (Enjoy the experience!)
+
+=== Tokyo Explorer + AI Menu ===
+1. View Shibuya Crossing ASCII Art
+2. View Mount Fuji ASCII Art
+3. Get a Random Tokyo Fact
+4. View Shinkansen ASCII Art
+5. AI Tokyo Guide
+6. AI Travel Planner
+7. Exit
+
+Enter your choice (1-7): 6 
+How many days will you be in Tokyo? 
+maybe 2
+What are your main interests? (e.g., culture, food, technology) 
+food
+
+Creating your personalized itinerary...
+f
+o
+o
+d
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+| Okay, here's a 2-day Tokyo food itinerary designed for a serious culinary adventurer.  It's packed, but that's Tokyo!  I'll focus on a mix of high-end experiences, local favorites, and unique food adventures, with a balance of traditional and modern.  I'll also include travel tips to make it all flow smoothly.
+
+**Important Considerations Before We Begin:**
+
+*   **Reservations:**  For many of the high-end places (especially sushi and tempura), reservations are *essential*, often weeks or even months in advance.  I'll note where this is crucial.  Use a service like TableCheck or Pocket Concierge, or ask your hotel concierge for help |
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+=== Tokyo Explorer + AI Menu ===
+1. View Shibuya Crossing ASCII Art
+2. View Mount Fuji ASCII Art
+3. Get a Random Tokyo Fact
+4. View Shinkansen ASCII Art
+5. AI Tokyo Guide
+6. AI Travel Planner
+7. Exit
+
+Enter your choice (1-7): 
