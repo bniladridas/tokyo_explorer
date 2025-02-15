@@ -3,91 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokyo Explorer Blog</title>
+    <title>Tokyo Explorer + AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #ffcc00;
-            --text-color: #ffffff;
-            --bg-overlay: rgba(0, 0, 0, 0.8);
-            --accent-color: #ff4b4b;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                        url('https://source.unsplash.com/1920x1080/?tokyo,night') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-color);
+            background: radial-gradient(circle at 30% 50%, #F8E1E7 0%, #FFB17A 45%, #F5D0C5 100%);
+            min-height: 100vh;
+            color: #2A2A2A;
             line-height: 1.6;
         }
 
         .container {
             max-width: 1200px;
-            margin: auto;
-            padding: 2rem;
-            background: var(--bg-overlay);
-            backdrop-filter: blur(10px);
-            min-height: 100vh;
+            margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        /* Header Styles */
-        .site-header {
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .header {
             text-align: center;
-            padding: 2rem 0;
-            border-bottom: 2px solid var(--primary-color);
-            animation: fadeInDown 1s ease;
+            margin-bottom: 4rem;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .logo {
             width: 120px;
             height: 120px;
+            margin: 0 auto 2rem;
+            display: block;
             border-radius: 50%;
-            border: 3px solid var(--primary-color);
             padding: 10px;
-            margin-bottom: 1rem;
-            animation: pulse 2s infinite;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(5px);
         }
 
-        .site-header h1 {
-            font-size: 3.5em;
-            margin: 1rem 0;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Main Content Styles */
-        .main-content {
-            margin: 3rem 0;
-            animation: fadeInUp 1s ease;
-        }
-
-        .blog-post {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .blog-post h2 {
-            color: var(--primary-color);
-            font-size: 2.5em;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Timeline Styles */
         .timeline {
-            margin-top: 3rem;
             position: relative;
+            margin: 2rem 0;
+            padding-left: 2rem;
         }
 
         .timeline::before {
@@ -97,176 +79,145 @@
             top: 0;
             width: 2px;
             height: 100%;
-            background: var(--primary-color);
+            background: rgba(255, 107, 107, 0.3);
         }
 
-        .timeline ul {
-            list-style: none;
-        }
-
-        .timeline li {
-            margin: 2rem 0;
-            padding-left: 2rem;
+        .timeline-item {
             position: relative;
-            cursor: pointer;
+            padding: 1rem 0;
+            padding-left: 2rem;
         }
 
-        .timeline li::before {
+        .timeline-item::before {
             content: '';
             position: absolute;
             left: -9px;
             top: 50%;
             width: 20px;
             height: 20px;
-            background: var(--primary-color);
+            background: #FF6B6B;
             border-radius: 50%;
             transform: translateY(-50%);
             transition: all 0.3s ease;
         }
 
-        .timeline li:hover::before {
-            background: var(--accent-color);
-            box-shadow: 0 0 15px var(--accent-color);
+        .timeline-item:hover::before {
+            transform: translateY(-50%) scale(1.2);
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
         }
 
-        /* Footer Styles */
-        .site-footer {
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(5px);
             text-align: center;
-            padding: 2rem 0;
-            border-top: 2px solid var(--primary-color);
-            animation: fadeInUp 1s ease;
         }
 
-        .site-footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #FF6B6B;
         }
 
-        .site-footer a:hover {
-            color: var(--accent-color);
+        .floating-shapes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            pointer-events: none;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 20s infinite;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .shape:nth-child(1) { width: 200px; height: 200px; top: 10%; left: 10%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 150px; height: 150px; top: 60%; right: 15%; animation-delay: -5s; }
+        .shape:nth-child(3) { width: 100px; height: 100px; bottom: 20%; left: 20%; animation-delay: -10s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 10px rgba(255, 204, 0, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
-            }
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-
-            .site-header h1 {
-                font-size: 2.5em;
-            }
-
-            .logo {
-                width: 100px;
-                height: 100px;
-            }
-
-            .blog-post {
-                padding: 1.5rem;
-            }
+            .container { padding: 2rem 1rem; }
+            .header h1 { font-size: 2.5rem; }
+            .glass-card { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
     <div class="container">
-        <header class="site-header">
+        <header class="header glass-card">
             <img src="https://www.rust-lang.org/logos/rust-logo-512x512.png" alt="Rust Logo" class="logo">
             <h1>Tokyo Explorer + AI</h1>
             <p>Your guide to exploring Tokyo with AI!</p>
-            <p>This project is a terminal-based AI application that guides users in exploring Tokyo using advanced AI capabilities.</p>
+            <p>A terminal-based AI application guiding users through Tokyo's wonders</p>
         </header>
 
-        <main class="main-content">
-            <section class="blog-post">
-                <h2>Enhancements and Features</h2>
-                <p>In our latest updates, we have integrated the Gemini-2.0-pro-exp-02-05 model to enhance the user experience...</p>
-                
-                <div class="timeline">
-                    <h3>Timeline of Development</h3>
-                    <ul>
-                        <li>2023: Project inception and initial feature development.</li>
-                        <li>2024: Integration of AI capabilities and prompt engineering.</li>
-                        <li>2025: Current enhancements and user feedback implementation.</li>
-                    </ul>
+        <div class="glass-card">
+            <h2>AI-Powered Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-robot feature-icon"></i>
+                    <h3>Gemini Integration</h3>
+                    <p>Enhanced with Gemini-2.0-pro-exp-02-05 model for intelligent interactions</p>
                 </div>
-            </section>
-        </main>
+                <div class="feature-card">
+                    <i class="fas fa-map-marked-alt feature-icon"></i>
+                    <h3>Smart Navigation</h3>
+                    <p>AI-powered route planning and location recommendations</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language feature-icon"></i>
+                    <h3>Language Support</h3>
+                    <p>Real-time translation and cultural insights</p>
+                </div>
+            </div>
+        </div>
 
-        <footer class="site-footer">
+        <div class="glass-card">
+            <h2>Development Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2023</h3>
+                    <p>Project inception and initial feature development</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024</h3>
+                    <p>Integration of AI capabilities and prompt engineering</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2025</h3>
+                    <p>Current enhancements and user feedback implementation</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="glass-card" style="text-align: center;">
             <p>&copy; 2025 Tokyo Explorer Project</p>
-            <p>View the project repository on <a href="https://github.com/bniladridas/tokyo_explorer" target="_blank">GitHub <i class="fab fa-github"></i></a></p>
+            <p>View the project on <a href="https://github.com/bniladridas/tokyo_explorer" style="color: #FF6B6B; text-decoration: none;"><i class="fab fa-github"></i> GitHub</a></p>
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add smooth scroll behavior
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Add timeline animation on scroll
-            const timelineItems = document.querySelectorAll('.timeline li');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateX(0)';
-                    }
-                });
-            });
-
-            timelineItems.forEach(item => {
-                item.style.opacity = 0;
-                item.style.transform = 'translateX(-20px)';
-                observer.observe(item);
-            });
-        });
-    </script>
 </body>
 </html>

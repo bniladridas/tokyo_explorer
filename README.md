@@ -1,7 +1,10 @@
 # Tokyo Explorer + AI
+![Gemini API 2.0 EXP Pro](https://img.shields.io/badge/Gemini%20API%202.0%20EXP%20Pro-FF6B6B?style=flat&logo=Gemini&logoColor=white) ![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
 
 ## Description
 Tokyo Explorer + AI is a Rust application that provides an interactive experience for exploring Tokyo with the help of AI-generated content.
+
+![Toko Image](tokyo.png)
 
 ## Installation
 To build the project, run the following command:
