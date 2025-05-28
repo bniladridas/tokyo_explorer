@@ -1,20 +1,30 @@
 # Tokyo Explorer + AI
+Explore Tokyo like never before. Powered by the Gemini API 2.0 EXP Pro and built in Rust, this app crafts immersive, AI-driven experiences—blending cultural insights, tailored itineraries, and dynamic interactions.
 
-## Description
-Tokyo Explorer + AI is a Rust application that provides an interactive experience for exploring Tokyo with the help of AI-generated content.
+![Tokyo Image](assets/tokyo.png)
 
-## Installation
-To build the project, run the following command:
+## Get Started
+Build and run in moments.
 
 ```bash
 cargo build
+cargo run
 ```
 
-## Usage
-After building the project, you can run the application to explore Tokyo and ask questions about the city.
+Keep your repository fresh:
+```bash
+git pull
+```
+
+## Experience Tokyo
+Dive into AI-generated itineraries, uncover cultural gems, and explore Tokyo with a seamless, interactive app. Powered by Rust and the Gemini-2.0-pro-exp-02-05 model, every interaction is rich, engaging, and tailored.
+
+## Key Features
+- **Enhanced Prompts**: Contextual prompts for precise, vibrant AI responses.
+- **Tuned Creativity**: Temperature set to 0.7, Top K at 50, and Max Output Tokens at 150 for concise, creative outputs.
+- **Secure Design**: Keep your `.env` file safe to protect API keys.
 
 ## Dependencies
-This project uses the following dependencies:
 - tokio
 - colored
 - rand
@@ -23,40 +33,37 @@ This project uses the following dependencies:
 - serde
 - serde_json
 
-## Mathematical Concepts
+## Git Essentials
+Take control of your workflow:
+- Initialize: `git init`
+- Stage: `git add .`
+- Commit: `git commit -m "Your message"`
+- Push: `git push -u origin branch-name`
+- Fetch: `git fetch origin`
+- Switch Branch: `git checkout branch-name`
+- Create Branch: `git checkout -b new-branch-name`
+- Clone: `git clone https://github.com/username/repo-name`
+- Force Push: `git push --force`
+- Amend Commit: `git commit --amend -m "Updated message"`
+- Check Status: `git status`
+- Pull: `git pull`
 
-### Probability Distributions
-The temperature parameter \( T \) controls the randomness of the AI's responses. A higher temperature results in more random outputs, while a lower temperature makes the output more deterministic.
+## AI Under the Hood
+Tokyo Explorer + AI harnesses advanced probabilistic models:
+- **Temperature**: Controls response randomness (0.7 for balanced creativity).
+- **Top-K Sampling**: Selects from the top 50 probable tokens.
+- **Top-P Sampling**: Targets tokens meeting a cumulative probability threshold.
+- **Bayesian Inference**: Updates hypotheses with new data.
+- **Markov Chain Monte Carlo (MCMC)**: Samples from complex distributions for dynamic outputs.
 
-The probability of selecting a token can be represented as:
-\[
-P(x) = \frac{e^{\frac{score(x)}{T}}}{\sum_{y \in V} e^{\frac{score(y)}{T}}}
-\]
-where \( score(x) \) is the score assigned to token \( x \) and \( V \) is the vocabulary.
+## Create a Release
+Automate releases with GitHub Actions:
+1. Commit and push changes.
+2. Go to the "Actions" tab in your GitHub repo.
+3. Select the "Generate Release" workflow.
+4. Run the workflow and follow the prompts.
 
-### Statistical Sampling
-**Top-k Sampling:**
-In top-k sampling, the model selects from the top \( k \) most probable tokens. The probability distribution is truncated to these tokens.
+The `release.yml` file in `.github/workflows` handles building, releasing, and artifact uploads.
 
-**Top-p Sampling (Nucleus Sampling):**
-In top-p sampling, the model selects from the smallest set of tokens whose cumulative probability exceeds a threshold \( p \).
-
-Mathematically, this can be represented as:
-\[
-\text{Select } S = \{x \in V \mid P(x) \geq \text{threshold} \}
-\]
-where \( P(x) \) is the probability of token \( x \).
-
-### Bayesian Inference
-Bayesian inference is a statistical framework for updating the probability of a hypothesis based on new evidence. It can be represented as:
-\[
-P(H \mid E) = \frac{P(E \mid H) \cdot P(H)}{P(E)}
-\]
-where \( P(H \mid E) \) is the posterior probability of the hypothesis \( H \) given the evidence \( E \), \( P(E \mid H) \) is the likelihood of the evidence given the hypothesis, \( P(H) \) is the prior probability of the hypothesis, and \( P(E) \) is the marginal likelihood of the evidence.
-
-### Markov Chain Monte Carlo (MCMC)
-MCMC is a class of algorithms for sampling from a probability distribution. It can be represented as:
-\[
-\pi(x) = \lim_{t \to \infty} P(X_t = x)
-\]
-where \( \pi(x) \) is the stationary distribution of the Markov chain, \( X_t \) is the state of the chain at time \( t \), and \( P(X_t = x) \) is the probability of the chain being in state \( x \) at time \( t \).
+## Share Your Thoughts
+We’d love to hear from you. Connect on [LinkedIn](https://www.linkedin.com/in/bniladridas) to share feedback or ideas.
